@@ -1,25 +1,36 @@
 import type { Config } from "tailwindcss";
 
 export default {
-	darkMode: ["class"],
-	content: [
-		"./pages/**/*.{ts,tsx}",
-		"./components/**/*.{ts,tsx}",
-		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
-	],
-	prefix: "",
-	theme: {
-		container: {
-			center: true,
-			padding: '2rem',
-			screens: {
-				'2xl': '1400px'
-			}
-		},
-		extend: {
-			colors: {
-				border: 'hsl(var(--border))',
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      colors: {
+        morpho: {
+          100: "#E6F3FF",
+          200: "#B3D9FF",
+          300: "#80BFFF",
+          400: "#4DA6FF",
+          500: "#1A8CFF",
+          600: "#0073E6",
+          700: "#0059B3",
+          800: "#004080",
+          900: "#00264D",
+        },
+        border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
@@ -62,14 +73,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
-			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			},
-			keyframes: {
-				'accordion-down': {
+      },
+      keyframes: {
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        'accordion-down': {
 					from: {
 						height: '0'
 					},
@@ -85,11 +99,18 @@ export default {
 						height: '0'
 					}
 				}
-			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
+      },
+      animation: {
+        "fade-up": "fade-up 0.5s ease-out",
+        float: "float 6s ease-in-out infinite",
+        'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+      },
+      borderRadius: {
+				lg: 'var(--radius)',
+				md: 'calc(var(--radius) - 2px)',
+				sm: 'calc(var(--radius) - 4px)'
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

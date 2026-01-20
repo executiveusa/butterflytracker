@@ -28,6 +28,67 @@ const Index = () => {
           </p>
         </div>
         <EmailForm />
+        <div className="w-full max-w-4xl mt-12 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 md:p-8">
+          <table className="w-full text-left border-collapse">
+            <caption className="caption-top text-morpho-900 font-semibold text-lg mb-4">
+              Resumen de especies destacadas, su estatus y plantas hospedantes principales.
+            </caption>
+            <thead className="bg-morpho-100 text-morpho-900">
+              <tr>
+                <th scope="col" className="px-4 py-3 text-sm font-semibold uppercase tracking-wide">
+                  Especie (nombre común)
+                </th>
+                <th scope="col" className="px-4 py-3 text-sm font-semibold uppercase tracking-wide">
+                  Estatus/CITES
+                </th>
+                <th scope="col" className="px-4 py-3 text-sm font-semibold uppercase tracking-wide">
+                  Temporada principal
+                </th>
+                <th scope="col" className="px-4 py-3 text-sm font-semibold uppercase tracking-wide">
+                  Plantas hospedantes
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-morpho-200 text-morpho-900">
+              <tr className="hover:bg-morpho-50/70">
+                <td className="px-4 py-3 font-medium">Monarca</td>
+                <td className="px-4 py-3">Vulnerable / CITES: No listado</td>
+                <td className="px-4 py-3">Otoño - Invierno</td>
+                <td className="px-4 py-3">Asclepias (algodoncillo)</td>
+              </tr>
+              <tr className="hover:bg-morpho-50/70">
+                <td className="px-4 py-3 font-medium">Morpho azul</td>
+                <td className="px-4 py-3">Sin evaluación / CITES: No listado</td>
+                <td className="px-4 py-3">Primavera - Verano</td>
+                <td className="px-4 py-3">Fabaceae (Inga, Machaerium)</td>
+              </tr>
+              <tr className="hover:bg-morpho-50/70">
+                <td className="px-4 py-3 font-medium">Heliconius</td>
+                <td className="px-4 py-3">Sin evaluación / CITES: No listado</td>
+                <td className="px-4 py-3">Todo el año (picos en lluvias)</td>
+                <td className="px-4 py-3">Passiflora (maracuyá)</td>
+              </tr>
+              <tr className="hover:bg-morpho-50/70">
+                <td className="px-4 py-3 font-medium">Agraulis</td>
+                <td className="px-4 py-3">Sin evaluación / CITES: No listado</td>
+                <td className="px-4 py-3">Primavera - Otoño</td>
+                <td className="px-4 py-3">Passiflora (enredaderas)</td>
+              </tr>
+              <tr className="hover:bg-morpho-50/70">
+                <td className="px-4 py-3 font-medium">Papilio garamas</td>
+                <td className="px-4 py-3">Sin evaluación / CITES: No listado</td>
+                <td className="px-4 py-3">Verano - Otoño</td>
+                <td className="px-4 py-3">Rutaceae (citrus)</td>
+              </tr>
+              <tr className="hover:bg-morpho-50/70">
+                <td className="px-4 py-3 font-medium">Vanessa cardui</td>
+                <td className="px-4 py-3">Preocupación menor / CITES: No listado</td>
+                <td className="px-4 py-3">Primavera - Verano</td>
+                <td className="px-4 py-3">Asteraceae (cardos)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

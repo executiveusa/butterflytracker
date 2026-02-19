@@ -2,8 +2,11 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { Butterfly } from '@/components/Butterfly';
 import { EmailForm } from '@/components/EmailForm';
+import { useLanguage } from '@/lib/i18n';
 
 const Index = () => {
+  const { language, setLanguage, t } = useLanguage();
+
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-morpho-100 to-morpho-200">
       <div className="absolute inset-0">
@@ -158,6 +161,104 @@ const Index = () => {
               <EmailForm />
             </div>
           </section>
+        </div>
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-12">
+        <div className="absolute top-6 right-6 flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-sm font-semibold text-morpho-900 shadow-sm backdrop-blur-sm">
+          <span className="sr-only">{t.languageSelectorLabel}</span>
+          <div role="group" aria-label={t.languageSelectorLabel} className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => setLanguage('es')}
+              aria-pressed={language === 'es'}
+              className={`rounded-full px-3 py-1 transition ${
+                language === 'es' ? 'bg-morpho-600 text-white' : 'bg-transparent text-morpho-900'
+              }`}
+            >
+              {t.languageOptionEs}
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('en')}
+              aria-pressed={language === 'en'}
+              className={`rounded-full px-3 py-1 transition ${
+                language === 'en' ? 'bg-morpho-600 text-white' : 'bg-transparent text-morpho-900'
+              }`}
+            >
+              {t.languageOptionEn}
+            </button>
+          </div>
+        </div>
+        <div className="text-center mb-8 space-y-4">
+          <h1 className="text-5xl font-bold text-morpho-900 animate-fade-up" style={{ animationDelay: '200ms' }}>
+            {t.heroTitle}
+          </h1>
+          <p className="text-xl text-morpho-800 max-w-md mx-auto animate-fade-up" style={{ animationDelay: '400ms' }}>
+            {t.heroDescription}
+          </p>
+        </div>
+        <EmailForm />
+        <div className="w-full max-w-4xl mt-12 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 md:p-8">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[720px] text-left border-collapse">
+              <caption className="caption-top text-morpho-900 font-semibold text-lg mb-4">
+                Resumen de especies destacadas, su estatus y plantas hospedantes principales.
+              </caption>
+              <thead className="bg-morpho-100 text-morpho-900">
+                <tr>
+                  <th scope="col" className="px-4 py-3 text-sm font-semibold uppercase tracking-wide">
+                    Especie (nombre común)
+                  </th>
+                  <th scope="col" className="px-4 py-3 text-sm font-semibold uppercase tracking-wide">
+                    Estatus/CITES
+                  </th>
+                  <th scope="col" className="px-4 py-3 text-sm font-semibold uppercase tracking-wide">
+                    Temporada principal
+                  </th>
+                  <th scope="col" className="px-4 py-3 text-sm font-semibold uppercase tracking-wide">
+                    Plantas hospedantes
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-morpho-200 text-morpho-900 text-sm md:text-base">
+                <tr className="hover:bg-morpho-50/70">
+                  <td className="px-4 py-3 font-medium">Monarca</td>
+                  <td className="px-4 py-3">Vulnerable / CITES: No listado</td>
+                  <td className="px-4 py-3">Otoño - Invierno</td>
+                  <td className="px-4 py-3">Asclepias (algodoncillo)</td>
+                </tr>
+                <tr className="bg-white/60 hover:bg-morpho-50/70">
+                  <td className="px-4 py-3 font-medium">Morpho azul</td>
+                  <td className="px-4 py-3">Sin evaluación / CITES: No listado</td>
+                  <td className="px-4 py-3">Primavera - Verano</td>
+                  <td className="px-4 py-3">Fabaceae (Inga, Machaerium)</td>
+                </tr>
+                <tr className="hover:bg-morpho-50/70">
+                  <td className="px-4 py-3 font-medium">Heliconius</td>
+                  <td className="px-4 py-3">Sin evaluación / CITES: No listado</td>
+                  <td className="px-4 py-3">Todo el año (picos en lluvias)</td>
+                  <td className="px-4 py-3">Passiflora (maracuyá)</td>
+                </tr>
+                <tr className="bg-white/60 hover:bg-morpho-50/70">
+                  <td className="px-4 py-3 font-medium">Agraulis</td>
+                  <td className="px-4 py-3">Sin evaluación / CITES: No listado</td>
+                  <td className="px-4 py-3">Primavera - Otoño</td>
+                  <td className="px-4 py-3">Passiflora (enredaderas)</td>
+                </tr>
+                <tr className="hover:bg-morpho-50/70">
+                  <td className="px-4 py-3 font-medium">Papilio garamas</td>
+                  <td className="px-4 py-3">Sin evaluación / CITES: No listado</td>
+                  <td className="px-4 py-3">Verano - Otoño</td>
+                  <td className="px-4 py-3">Rutaceae (citrus)</td>
+                </tr>
+                <tr className="bg-white/60 hover:bg-morpho-50/70">
+                  <td className="px-4 py-3 font-medium">Vanessa cardui</td>
+                  <td className="px-4 py-3">Preocupación menor / CITES: No listado</td>
+                  <td className="px-4 py-3">Primavera - Verano</td>
+                  <td className="px-4 py-3">Asteraceae (cardos)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

@@ -5,7 +5,23 @@ import { Input } from "@/components/ui/input";
 import { Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-export const EmailForm = () => {
+type EmailFormProps = {
+  placeholder?: string;
+  buttonLabel?: string;
+  invalidTitle?: string;
+  invalidDescription?: string;
+  successTitle?: string;
+  successDescription?: string;
+};
+
+export const EmailForm = ({
+  placeholder = 'Enter your email',
+  buttonLabel = 'Subscribe',
+  invalidTitle = 'Invalid email',
+  invalidDescription = 'Please enter a valid email address',
+  successTitle = 'Success!',
+  successDescription = "Thank you for your interest. We'll be in touch soon!",
+}: EmailFormProps) => {
   const [email, setEmail] = useState('');
   const { toast } = useToast();
 
@@ -13,15 +29,15 @@ export const EmailForm = () => {
     e.preventDefault();
     if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
       toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address",
+        title: invalidTitle,
+        description: invalidDescription,
         variant: "destructive",
       });
       return;
     }
     toast({
-      title: "Success!",
-      description: "Thank you for your interest. We'll be in touch soon!",
+      title: successTitle,
+      description: successDescription,
     });
     setEmail('');
   };
@@ -31,14 +47,14 @@ export const EmailForm = () => {
       <div className="flex gap-2">
         <Input
           type="email"
-          placeholder="Enter your email"
+          placeholder={placeholder}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="bg-white/80 backdrop-blur-sm border-morpho-300"
         />
         <Button type="submit" className="bg-morpho-600 hover:bg-morpho-700">
           <Mail className="w-4 h-4 mr-2" />
-          Subscribe
+          {buttonLabel}
         </Button>
       </div>
     </form>

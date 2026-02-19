@@ -60,6 +60,23 @@ This project is built with .
 - shadcn-ui
 - Tailwind CSS
 
+## Team coding process (effective immediately)
+
+This repository now follows the workflow patterns from:
+
+- https://github.com/michaelshimeles/ralphy.git
+- https://github.com/Dicklesworthstone/agentic_coding_flywheel_setup.git
+
+When implementing new work, use this baseline process:
+
+1. **Plan first**: write a short implementation plan and identify tests before touching code.
+2. **Small, reviewable commits**: keep changes focused by concern (UI, logic, tests, docs).
+3. **Validate locally**: run install/build/lint/test checks relevant to the scope.
+4. **Capture artifacts**: for visible UI updates, include a screenshot from the running app.
+5. **Document outcomes**: summarize what changed, what was tested, and known follow-ups.
+
+This section is intended to make expectations explicit for all contributors and agents working in this repo.
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/84db5fe3-2c00-4f1c-8180-16dbdddbc615) and click on Share -> Publish.

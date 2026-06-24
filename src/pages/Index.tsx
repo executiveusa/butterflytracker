@@ -1,5 +1,5 @@
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { Butterfly } from '@/components/Butterfly';
@@ -85,7 +85,7 @@ const speciesTableEn = [
 ];
 
 const Index = () => {
-  const [language, setLanguage] = useState<'es' | 'en'>('es');
+  const { language, setLanguage } = useLanguage();
   const content = useMemo(() => {
     if (language === 'en') {
       return {
@@ -291,7 +291,6 @@ const Index = () => {
   }, [language]);
 
   const speciesRows = language === 'en' ? speciesTableEn : speciesTable;
-  const { language, setLanguage, t } = useLanguage();
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-morpho-100 to-morpho-200">
@@ -440,6 +439,8 @@ const Index = () => {
             </div>
           </section>
         </div>
+      </div>
+
       <div className="relative z-10 flex flex-col items-center min-h-screen px-4 py-12">
         <div className="w-full max-w-4xl space-y-10 text-morpho-900">
           <header className="space-y-4 rounded-2xl bg-white/80 p-6 text-center shadow-lg backdrop-blur">
@@ -681,6 +682,7 @@ const Index = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

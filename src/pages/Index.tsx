@@ -439,6 +439,8 @@ const Index = () => {
             </div>
           </section>
         </div>
+      </div>
+
       <div className="relative z-10 flex flex-col items-center min-h-screen px-4 py-12">
         <div className="w-full max-w-4xl space-y-10 text-morpho-900">
           <header className="space-y-4 rounded-2xl bg-white/80 p-6 text-center shadow-lg backdrop-blur">
@@ -680,6 +682,7 @@ const Index = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -297,8 +297,8 @@ const Index = () => {
       <div className="absolute inset-0">
         <Canvas className="w-full h-full" camera={{ position: [0, 0, 5], fov: 75 }}>
           <ambientLight intensity={0.5} />
-          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-          <pointLight position={[-10, -10, -10]} />
+          <spotLight position={[10, 10, 10] as [number, number, number]} angle={0.15} penumbra={1} />
+          <pointLight position={[-10, -10, -10] as [number, number, number]} />
           <Butterfly />
           <OrbitControls enableZoom={false} />
         </Canvas>

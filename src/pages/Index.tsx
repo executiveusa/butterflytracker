@@ -1,7 +1,7 @@
 
 import { useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { Butterfly } from '@/components/Butterfly';
 import { EmailForm } from '@/components/EmailForm';
 import { useLanguage } from '@/lib/i18n';
@@ -295,8 +295,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-morpho-100 to-morpho-200">
       <div className="absolute inset-0">
-        <Canvas className="w-full h-full">
-          <PerspectiveCamera makeDefault position={[0, 0, 5]} />
+        <Canvas className="w-full h-full" camera={{ position: [0, 0, 5], fov: 75 }}>
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
           <pointLight position={[-10, -10, -10]} />

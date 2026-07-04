@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Atkinson+Hyperlegible:wght@400;700&family=Manrope:wght@600;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -99,3 +100,4 @@
     @apply bg-background text-foreground;
   }
 }
+body{font-family:'Atkinson Hyperlegible',Georgia,serif;background:#EEF3E8;color:#1E1A16}h1,h2,h3{font-family:'Fraunces',Georgia,serif}.butterfly{position:absolute;width:84px;height:84px;z-index:5;animation:drift 12s ease-in-out infinite}.butterfly span{position:absolute;top:18px;width:42px;height:50px;border-radius:70% 20% 70% 30%;transform-origin:right center;animation:flap 1.6s ease-in-out infinite;background:#D96C1C}.butterfly span+span{left:42px;transform-origin:left center;border-radius:20% 70% 30% 70%;animation-name:flapR}.butterfly.monarch{left:10%;top:42%}.butterfly.morpho{right:13%;top:30%;animation-delay:-4s}.butterfly.morpho span{background:#1377B8}.leaf{position:absolute;border-radius:60% 0 60% 0;background:#496B3A66;filter:blur(.3px)}.leaf-a{width:32vw;height:18vw;right:-8vw;bottom:8vh;transform:rotate(-20deg)}.leaf-b{width:24vw;height:14vw;left:-7vw;top:14vh;transform:rotate(30deg)}@keyframes flap{50%{transform:rotateY(58deg) rotate(-6deg)}}@keyframes flapR{50%{transform:rotateY(-58deg) rotate(6deg)}}@keyframes drift{50%{transform:translate3d(28px,-30px,0) rotate(3deg)}}@media (prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.butterfly{position:absolute}}

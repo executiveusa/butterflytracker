@@ -1,0 +1,1 @@
+import { test, expect } from '@playwright/test';test('journey chapters render',async({page})=>{await page.goto('/');await expect(page.getByText('El huevo')).toBeVisible();await expect(page.getByText('Cómo puedes ayudar')).toBeVisible();});

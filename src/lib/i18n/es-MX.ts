@@ -1,0 +1,1 @@
+export const esMX = { nav:['El Viaje','Mariposas','Jardín PV','Escuelas','Participa','Ingresar'], hero:{kicker:'Bienvenidos a', title:'Monarcas y Morphos', cta:'Emprende el viaje'}, chapters:['El huevo','La oruga','La crisálida','El primer vuelo','El viaje','El jardín en Puerto Vallarta','Cómo puedes ayudar'] };

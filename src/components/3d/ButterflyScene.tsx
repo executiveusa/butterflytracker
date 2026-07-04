@@ -1,0 +1,2 @@
+import { Suspense } from 'react';import { Canvas } from '@react-three/fiber';import { OrbitControls } from '@react-three/drei';import { ButterflyModel } from './ButterflyModel';import { ButterflyFallback } from './ButterflyFallback';
+export function ButterflyScene(){return <div className="h-72 rounded-3xl bg-[#17251B]"><Suspense fallback={<ButterflyFallback/>}><Canvas camera={{position:[0,0,4]}}><ambientLight intensity={1}/><ButterflyModel/><OrbitControls enablePan={false}/></Canvas></Suspense></div>}

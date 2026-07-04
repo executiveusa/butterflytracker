@@ -1,0 +1,1 @@
+import { test, expect } from '@playwright/test';test('homepage loads Spanish hero',async({page})=>{await page.goto('/');await expect(page.getByText('Monarcas y Morphos').first()).toBeVisible();await expect(page.getByText('Emprende el viaje')).toBeVisible();});

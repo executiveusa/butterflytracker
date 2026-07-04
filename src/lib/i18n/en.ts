@@ -1,0 +1,1 @@
+export const en = { nav:['The Journey','Butterflies','PV Garden','Schools','Join','Sign in'], hero:{kicker:'Welcome to', title:'Monarchs and Morphos', cta:'Begin the journey'}, chapters:['The egg','The caterpillar','The chrysalis','First flight','The journey','The Puerto Vallarta garden','How you can help'] };

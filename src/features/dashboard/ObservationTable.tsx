@@ -1,0 +1,1 @@
+export function ObservationTable(){return <section className="rounded-3xl bg-[#213D2B] p-6"><h2 className="font-serif text-3xl">Cola de moderación</h2><p>photo evidence placeholders · export buttons · species CMS placeholder</p></section>}

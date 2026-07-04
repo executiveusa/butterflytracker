@@ -1,0 +1,1 @@
+export function LifecycleWheel(){return <div className="grid grid-cols-4 gap-2 text-center">{['Huevo','Oruga','Crisálida','Vuelo'].map(x=><span className="rounded-full bg-[#EEF3E8] p-3" key={x}>{x}</span>)}</div>}

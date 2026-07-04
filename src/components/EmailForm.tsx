@@ -31,8 +31,6 @@ export const EmailForm = ({
     e.preventDefault();
     if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
       toast({
-        title: invalidTitle,
-        description: invalidDescription,
         title: t.invalidEmailTitle,
         description: t.invalidEmailDescription,
         variant: "destructive",
@@ -40,8 +38,6 @@ export const EmailForm = ({
       return;
     }
     toast({
-      title: successTitle,
-      description: successDescription,
       title: t.successTitle,
       description: t.successDescription,
     });
@@ -53,7 +49,6 @@ export const EmailForm = ({
       <div className="flex gap-2">
         <Input
           type="email"
-          placeholder={placeholder}
           placeholder={t.emailPlaceholder}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -61,7 +56,6 @@ export const EmailForm = ({
         />
         <Button type="submit" className="bg-morpho-600 hover:bg-morpho-700">
           <Mail className="w-4 h-4 mr-2" />
-          {buttonLabel}
           {t.subscribeLabel}
         </Button>
       </div>

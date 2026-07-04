@@ -1,0 +1,1 @@
+export function ButterflyTrail({type='monarch'}:{type?:'monarch'|'morpho'}){const blue=type==='morpho';return <div className={`butterfly ${blue?'morpho':'monarch'}`} role="button" tabIndex={0} aria-label={blue?'Morpho azul interactiva':'Monarca interactiva'} title={blue?'Morpho azul':'Monarca'}><span/><span/></div>}

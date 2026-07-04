@@ -1,0 +1,2 @@
+export const colors=['naranja','azul','amarillo','blanco','negro','café','verde','rojo'];
+export function SpeciesFilters({active,setActive}:{active:string;setActive:(v:string)=>void}){return <div className="flex flex-wrap gap-3" aria-label="Filtros de mariposas"><button className="rounded-full bg-[#213D2B] px-4 py-2 text-white" onClick={()=>setActive('')}>todas</button>{colors.map(c=><button key={c} onClick={()=>setActive(c)} className={`rounded-full border px-4 py-2 ${active===c?'bg-[#D96C1C] text-white':'bg-white/70'}`}>{c}</button>)}</div>}

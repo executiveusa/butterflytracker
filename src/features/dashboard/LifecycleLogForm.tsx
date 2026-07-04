@@ -1,0 +1,1 @@
+export function LifecycleLogForm(){return <form className="rounded-3xl bg-[#213D2B] p-6"><h2 className="font-serif text-3xl">Lifecycle logs</h2><input className="mt-4 w-full rounded-xl p-3 text-[#1E1A16]" placeholder="Etapa verificada"/></form>}

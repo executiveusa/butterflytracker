@@ -1,0 +1,1 @@
+import { test, expect } from '@playwright/test';test('atlas filters and profile',async({page})=>{await page.goto('/mariposas');await expect(page.getByText('Mariposas')).toBeVisible();await page.getByRole('button',{name:/Abrir perfil/}).first().click();await expect(page.getByRole('dialog')).toBeVisible();});

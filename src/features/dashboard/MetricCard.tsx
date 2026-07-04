@@ -1,0 +1,1 @@
+export function MetricCard({label,value}:{label:string;value:string}){return <div className="rounded-3xl border border-[#E7B75F]/30 bg-[#213D2B] p-5"><div className="text-sm uppercase tracking-widest">{label}</div><div className="mt-2 font-serif text-4xl">{value}</div></div>}

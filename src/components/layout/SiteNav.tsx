@@ -1,0 +1,3 @@
+import { Link } from 'react-router-dom';
+const nav=[['/el-viaje','El Viaje'],['/mariposas','Mariposas'],['/jardin-puerto-vallarta','Jardín PV'],['/escuelas','Escuelas'],['/participa','Participa'],['/app','Ingresar']];
+export function SiteNav(){return <nav className="fixed left-1/2 top-4 z-40 flex w-[calc(100%-2rem)] max-w-6xl -translate-x-1/2 items-center justify-between rounded-full border border-white/30 bg-[#F5E8D0]/85 px-5 py-3 shadow-xl backdrop-blur"><Link to="/" className="font-serif text-xl text-[#1E1A16]">Monarcas y Morphos</Link><div className="hidden gap-3 md:flex">{nav.map(([to,label])=><Link key={to} to={to} className="rounded-full px-3 py-2 text-sm hover:bg-white/70">{label}</Link>)}</div></nav>}

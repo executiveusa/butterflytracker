@@ -1,0 +1,1 @@
+import { Link } from 'react-router-dom';export function CinematicCTA(){return <Link to="/el-viaje" className="inline-flex min-h-12 items-center rounded-full bg-[#D96C1C] px-7 py-3 font-semibold text-white shadow-xl transition hover:bg-[#1E1A16] focus:outline focus:outline-4 focus:outline-[#1377B8]">Emprende el viaje</Link>}

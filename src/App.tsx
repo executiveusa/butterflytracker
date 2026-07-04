@@ -1,30 +1,4 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import { LanguageProvider } from "./lib/i18n";
-
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </LanguageProvider>
-  </QueryClientProvider>
-);
-
+import { Toaster } from '@/components/ui/toaster';import { Toaster as Sonner } from '@/components/ui/sonner';import { TooltipProvider } from '@/components/ui/tooltip';import { QueryClient, QueryClientProvider } from '@tanstack/react-query';import { BrowserRouter, Routes, Route } from 'react-router-dom';import Index from './pages/Index';import NotFound from './pages/NotFound';import AtlasPage from './features/atlas/AtlasPage';import { DashboardShell } from './features/dashboard/DashboardShell';import { Journey, Monarch, Morpho, Garden, Schools, Participate, Legal } from './pages/SimplePages';import { LanguageProvider } from './lib/i18n';
+const queryClient=new QueryClient();
+const App=()=><QueryClientProvider client={queryClient}><LanguageProvider><TooltipProvider><Toaster/><Sonner/><BrowserRouter><Routes><Route path="/" element={<Index/>}/><Route path="/el-viaje" element={<Journey/>}/><Route path="/el-viaje/monarca" element={<Monarch/>}/><Route path="/el-viaje/morpho" element={<Morpho/>}/><Route path="/mariposas" element={<AtlasPage/>}/><Route path="/mariposas/:slug" element={<AtlasPage/>}/><Route path="/jardin-puerto-vallarta" element={<Garden/>}/><Route path="/escuelas" element={<Schools/>}/><Route path="/participa" element={<Participate/>}/><Route path="/legal-y-conservacion" element={<Legal/>}/><Route path="/app" element={<DashboardShell/>}/><Route path="*" element={<NotFound/>}/></Routes></BrowserRouter></TooltipProvider></LanguageProvider></QueryClientProvider>;
 export default App;
